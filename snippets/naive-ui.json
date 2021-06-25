@@ -1,0 +1,92 @@
+{
+  "Basic: Avatar n-avatar": {
+    "prefix": "nava",
+    "body": [
+        "<n-avatar size=\"${1:medium}\" src=\"${2}\">${3}</n-avatar>",
+        "${4}"
+    ],
+    "description": "Naive UI <n-avatar>"
+  },
+  "Basic: Button": {
+    "prefix": "nb",
+    "body": [
+        "<n-button type=\"${2|primary,default,info,success,warning,danger|}\" size=\"${3|medium,large,tiny,small|}\" @click=\"$4\">${1}</n-button>",
+        "${4}"
+    ],
+    "description": "Naive UI <n-button>"
+  },
+  "Basic: Button Group": {
+    "prefix": "nbg",
+    "body": [
+      "<n-button-group>",
+          "\t<n-button type=\"${2|primary,default,info,success,warning,danger|}\" size=\"${3|medium,large,tiny,small|}\" @click=\"$4\">${1}</n-button>",
+          "\t<n-button type=\"${5|primary,default,info,success,warning,danger|}\" size=\"${6|medium,large,tiny,small|}\" @click=\"$7\">${8}</n-button>",
+      "</n-button-group>",
+        "${9}"
+    ],
+    "description": "Naive UI <n-button-group>"
+  },
+  "Basic: Card": {
+    "prefix": "nca",
+    "body": [
+        "<n-card title=\"${2}\" size=\"${3:medium}\">${1}</n-card>",
+        "${4}"
+    ],
+    "description": "Naive UI <n-card>"
+  },
+  "Basic: Collapse": {
+    "prefix": "ncolla",
+    "body": [
+      "<n-collapse @item-header-click=\"handleItemHeaderClick\">",
+          "\t<n-collapse-item title=\"${2}\" name=\"$3\">${1}</n-collapse-item>",
+          "\t<n-collapse-item title=\"${5}\" name=\"$6\">${4}</n-collapse-item>",
+      "</n-collapse>",
+        "${7}"
+    ],
+    "description": "Naive UI <n-collapse>"
+  },
+  "Basic: Collapse Item": {
+    "prefix": "ncollai",
+    "body": [
+        "<n-collapse-item title=\"${2}\" name=\"$3\">${1}</n-collapse-item>",
+        "${4}"
+    ],
+    "description": "Naive UI <n-collapse-item>"
+  },
+  "Basic: Divider": {
+    "prefix": "ndiv",
+    "body": [
+        "<n-divider />",
+        "${1}"
+    ],
+    "description": "Naive UI <n-divider>"
+  },
+  "Basic: Dropdown": {
+    "prefix": "ndro",
+    "body": [
+      "<n-dropdown trigger=\"${2:hover}\" @select=\"handleSelect\" :options=\"${3:options}\">",
+        "\t<n-button :keyboard=\"false\">${1}</n-button>",
+      "</n-dropdown>",
+      "${4}"
+    ],
+    "description": "Naive UI <n-dropdown>"
+  },
+  "Basic: Ellipsis": {
+    "prefix": "nel",
+    "body": [
+      "<n-ellipsis :line-clamp=\"${2}\">",
+        "/t${1}",
+      "</n-ellipsis>",
+      "${3}"
+    ],
+    "description": "Naive UI <n-ellipsis>"
+  },
+  "Basic: Gradient Text": {
+    "prefix": "ngt",
+    "body": [
+      "<n-gradient-text type=\"${2:error}\">${1}</n-gradient-text>",
+      "${3}"
+    ],
+    "description": "Naive UI <n-ellipsis>"
+  }
+}
