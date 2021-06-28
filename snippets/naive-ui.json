@@ -1,8 +1,8 @@
 {
-  "Basic: Avatar n-avatar": {
+  "Basic: Avatar": {
     "prefix": "nava",
     "body": [
-        "<n-avatar size=\"${1:medium}\" src=\"${2}\">${3}</n-avatar>",
+        "<n-avatar size=\"${1|medium,large,small|}\" src=\"${2}\">${3}</n-avatar>",
         "${4}"
     ],
     "description": "Naive UI <n-avatar>"
@@ -11,7 +11,7 @@
     "prefix": "nb",
     "body": [
         "<n-button type=\"${2|primary,default,info,success,warning,danger|}\" size=\"${3|medium,large,tiny,small|}\" @click=\"$4\">${1}</n-button>",
-        "${4}"
+        "${5}"
     ],
     "description": "Naive UI <n-button>"
   },
@@ -27,9 +27,9 @@
     "description": "Naive UI <n-button-group>"
   },
   "Basic: Card": {
-    "prefix": "nca",
+    "prefix": "ncard",
     "body": [
-        "<n-card title=\"${2}\" size=\"${3:medium}\">${1}</n-card>",
+        "<n-card title=\"${2}\" size=\"${3|medium,large,small|}\">${1}</n-card>",
         "${4}"
     ],
     "description": "Naive UI <n-card>"
@@ -75,7 +75,7 @@
     "prefix": "nel",
     "body": [
       "<n-ellipsis :line-clamp=\"${2}\">",
-        "/t${1}",
+        "\t${1}",
       "</n-ellipsis>",
       "${3}"
     ],
@@ -84,9 +84,715 @@
   "Basic: Gradient Text": {
     "prefix": "ngt",
     "body": [
-      "<n-gradient-text type=\"${2:error}\">${1}</n-gradient-text>",
+      "<n-gradient-text type=\"${2|primary,info,success,warning,danger|}\">${1}</n-gradient-text>",
       "${3}"
     ],
     "description": "Naive UI <n-ellipsis>"
+  },
+  "Basic: Icon": {
+    "prefix": "nic",
+    "body": [
+      "<n-icon size=\"${2:40}\">",
+        "\t${1}",
+      "</n-icon>",
+      "${3}"
+    ],
+    "description": "Naive UI <n-icon>"
+  },
+  "Basic: Tag": {
+    "prefix": "nta",
+    "body": [
+      "<n-tag type=\"${2|default,info,success,warning,danger|}\" size=\"${3|medium,large,small|}\">${1}</n-tag>",
+      "${4}"
+    ],
+    "description": "Naive UI <n-tag>"
+  },
+  "Form: Auto Complete": {
+    "prefix": "nau",
+    "body": [
+      "<n-auto-complete v-model:value=\"${1}\" :options=\"${2:options}\" size=\"${3|medium,large,small|}\" placeholder=\"请输入\" />",
+      "${4}"
+    ],
+    "description": "Naive UI <n-auto-complete>"
+  },
+  "Form: Cascader": {
+    "prefix": "ncas",
+    "body": [
+      "<n-cascader",
+        "\tv-model:value=\"${1:value}\"",
+        "\tplaceholder=\"请选择\"",
+        "\texpand-trigger=\"${2|click,hover|}\"",
+        "\t:options=\"${3:options}\"",
+        "\t:cascade=\"${4:cascade}\"",
+        "\t:leaf-only=\"${5:leafOnly}\"",
+        "\t:show-path=\"${6:showPath}\"",
+        "\t:filterable=\"${7|true,false|}\"",
+      "/>",
+      "${8}"
+    ],
+    "description": "Naive UI <n-cascader>"
+  },
+  "Form: Color Picker": {
+    "prefix": "ncp",
+    "body": [
+        "<n-color-picker v-model=\"$1\" size=\"${2|normal,medium,small|}\" :show-alpha=\"${3|true,false|}\"></n-color-picker>",
+        "${4}"
+    ],
+    "description": "Naive UI <n-color-picker>"
+  },
+  "Form: Checkbox": {
+    "prefix": "nc",
+    "body": [
+        "<n-checkbox value=\"$1\" label=\"$2\" />",
+        "${3}"
+    ],
+    "description": "Naive UI <n-checkbox>"
+  },
+  "Form: Checkbox Group": {
+    "prefix": "ncg",
+    "body": [
+      "<n-checkbox-group v-model:value=\"$1\" @update:value=\"${2:handleUpdateValue}\">",
+        "\t<n-space item-style=\"display: flex;\">",
+          "\t\t<n-checkbox v-for=\"${3:item} in ${4:items}\" :key=\"$6\" :value=\"${3:item}.${5:key}\" :label=\"${3:item}.${7:label}\" />",
+        "\t</n-space>",
+      "</n-checkbox-group>",
+      "${8}"
+    ],
+    "description": "Naive UI <n-checkbox-group>"
+  },
+  "Form: Date Picker": {
+    "prefix": "ndp",
+    "body": [
+      "<n-date-picker v-model:value=\"$1\" type=\"${2|date,datetime,daterange,datetimerange|}\" size=\"${3|medium,small,large|}\" :format=\"${4:format}\">",
+      "</n-date-picker>",
+      "${5}"
+    ],
+    "description": "Naive UI <n-date-picker>"
+  },
+  "Form: Dynamic Input": {
+    "prefix": "ndyi",
+    "body": [
+      "<n-dynamic-input v-model:value=\"${1:value}\" placeholder=\"请输入\" :min=\"${2:3}\" :max=\"${3:6}\" />",
+      "<pre>",
+        "{{ JSON.stringify(${1:value}, 0, 2) }}",
+      "</pre>",
+      "${4}"
+    ],
+    "description": "Naive UI <n-dynamic-input>"
+  },
+  "Form: Dynamic Tags": {
+    "prefix": "ndyt",
+    "body": [
+      "<n-dynamic-tags v-model:value=\"${1:tags}\" />",
+      "${2}"
+    ],
+    "description": "Naive UI <n-dynamic-tags>"
+  },
+  "Form: Form": {
+    "prefix": "nf",
+    "body": [
+        "<n-form :model=\"${1:form}\" ref=\"${2:formRef}\" :rules=\"${3:rules}\" label-width=\"80\" :inline=\"${4|false,true|}\" size=\"${5|normal,medium,small|}\">",
+            "\t<n-form-item label=\"$6\" path=\"$7\">",
+                "\t\t<n-input v-model=\"${1:form}.${8}\" />",
+            "\t</n-form-item>",
+            "\t<n-form-item>",
+                "\t\t<n-button type=\"primary\" @click=\"onSubmit\">${9:立即创建}</n-button>",
+                "\t\t<n-button>${10:取消}</n-button>",
+            "\t</n-form-item>",
+        "</n-form>",
+        "${11}"
+    ],
+    "description": "Naive UI <n-form>"
+  },
+  "Form: Input": {
+    "prefix": "nipt",
+    "body": [
+      "<n-input v-model:value=\"$1\" type=\"${2|text,password,textarea|}\" placeholder=\"$3\" size=\"${4|medium,small,large|}\" clearable @change=\"$5\"></n-input>",
+      "${6}"
+    ],
+    "description": "Naive UI <n-input>"
+  },
+  "Form: Input Number": {
+    "prefix": "niptn",
+    "body": [
+      "<n-input-number v-model:value=\"$1\" placeholder=\"$2\" size=\"${3|medium,small,large|}\" />",
+      "${4}"
+    ],
+    "description": "Naive UI <n-input-number>"
+  },
+  "Form: Mention": {
+    "prefix": "nmen",
+    "body": [
+      "<n-mention :options=\"${1:options}\" type=\"${2|text,password,textarea|}\" default-value=\"@\" />",
+      "${3}"
+    ],
+    "description": "Naive UI <n-mention>"
+  },
+  "Form: Radio": {
+    "prefix": "nr",
+    "body": [
+      "<n-radio :checked=\"$1\" value=\"$2\" name=\"$3\" @change=\"handleChange\" />",
+      "${4}"
+    ],
+    "description": "Naive UI <n-radio>"
+  },
+  "Form: Radio Group": {
+    "prefix": "nrg",
+    "body": [
+      "<n-radio-group v-model:value=\"$1\" name=\"radiogroup\">",
+        "\t<n-space>",
+          "\t\t<n-radio v-for=\"${2:item} in options\" :key=\"${2:item}.value\" :value=\"${2:item}.value\">",
+            "\t\t\t{{ ${2:item}.label }}",
+          "\t\t</n-radio>",
+        "\t</n-space>",
+      "</n-radio-group>",
+      "${3}"
+    ],
+    "description": "Naive UI <n-radio-group>"
+  },
+  "Form: Rate": {
+    "prefix": "nra",
+    "body": [
+      "<n-rate v-model:value=\"$1\" :default-value=\"$2\" @update:value=\"${3:handleChange}\"></n-rate>",
+      "${4}"
+    ],
+    "description": "Naive UI <n-rate>"
+  },
+  "Form: Select": {
+    "prefix": "nsel",
+    "body": [
+      "<n-select v-model:value=\"$1\" size=\"${2|medium,small,large|}\" :options=\"${3:options}\" clearable filter />",
+      "${4}"
+    ],
+    "description": "Naive UI <n-select>"
+  },
+  "Form: Slider": {
+    "prefix": "nsl",
+    "body": [
+      "<n-slider v-model:value=\"$1\" :min=\"$2\" :max=\"$3\" :step=\"$4\" @update:value=\"$5\" />",
+      "${6}"
+    ],
+    "description": "Naive UI <n-slider>"
+  },
+  "Form: Switch": {
+    "prefix": "nsw",
+    "body": [
+      "<n-switch v-model:value=\"$1\" size=\"${2|medium,small,large|}\" @update:value=\"$3\" />",
+      "${4}"
+    ],
+    "description": "Naive UI <n-switch>"
+  },
+  "Form: Time Picker": {
+    "prefix": "ntp",
+    "body": [
+      "<n-time-picker v-model:value=\"$1\" size=\"${2|medium,small,large|}\" @update:value=\"$3\" />",
+      "${4}"
+    ],
+    "description": "Naive UI <n-time-picker>"
+  },
+  "Form: Transfer": {
+    "prefix": "ntr",
+    "body": [
+      "<n-transfer ref=\"transfer\" v-model:value=\"$1\" :options=\"${2:options}\" size=\"${3|medium,small,large|}\" @update:value=\"$4\" />",
+      "${5}"
+    ],
+    "description": "Naive UI <n-transfer>"
+  },
+  "Form: Upload": {
+    "prefix": "nup",
+    "body": [
+      "<n-upload",
+        "\taction=\"$1\"",
+        "\t:file-list=\"fileList\"",
+        "\t@change=\"handleUploadChange\"",
+        "\t@remove=\"handleRemove\"",
+      ">",
+        "\t<n-button>上传文件</n-button>",
+      "</n-upload>"
+    ],
+    "description": "Naive UI <n-upload>"
+  },
+  "Data: Calendar": {
+    "prefix": "ncal",
+    "body": [
+      "<n-calendar v-model:value=\"${1}\" @update:value=\"${2:handleUpdateValue}\"></n-calendar>",
+      "${3}"
+    ],
+    "description": "Naive UI <n-calendar>"
+  },
+  "Data: Data Table": {
+    "prefix": "ndt",
+    "body": [
+      "<n-data-table :columns=\"${1:columns}\" :data=\"${2:data}\" :pagination=\"${3:pagination}\" />",
+      "${4}"
+    ],
+    "description": "Naive UI <n-data-table>"
+  },
+  "Data: Descriptions": {
+    "prefix": "ndes",
+    "body": [
+      "<n-descriptions label-placement=\"${1|top,left|}\" title=\"$2\">",
+        "\t<n-descriptions-item label=\"$3\">${4}</n-descriptions-item>",
+      "</n-descriptions>",
+      "${5}"
+    ],
+    "description": "Naive UI <n-descriptions>"
+  },
+  "Data: Empty": {
+    "prefix": "nemp",
+    "body": [
+      "<n-empty description=\"${1:暂无数据}\">",
+        "\t${2}",
+      "</n-empty>",
+      "${3}"
+    ],
+    "description": "Naive UI <n-empty>"
+  },
+  "Data: Image": {
+    "prefix": "nim",
+    "body": [
+      "<n-image src=\"$1\" width=\"$2\">",
+      "${3}"
+    ],
+    "description": "Naive UI <n-image>"
+  },
+  "Data: Image Group": {
+    "prefix": "nimg",
+    "body": [
+      "<n-image-group>",
+        "\t<n-space>",
+          "\t\t<n-image v-for=\"${1:img} in ${2:imageList}\" :key=\"$3\" src=\"${1:img}\" width=\"$4\">",
+        "\t</n-space>",
+      "</n-image-group>",
+      "${5}"
+    ],
+    "description": "Naive UI <n-image-group>"
+  },
+  "Data: List": {
+    "prefix": "nl",
+    "body": [
+      "<n-list>",
+        "\t<n-list-item>",
+          "\t\t${1}",
+        "\t</n-list-item>",
+      "</n-list>",
+      "${2}"
+    ],
+    "description": "Naive UI <n-list>"
+  },
+  "Data: List Item": {
+    "prefix": "nli",
+    "body": [
+      "<n-list-item>",
+        "\t${1}",
+      "</n-list-item>",
+      "${2}"
+    ],
+    "description": "Naive UI <n-list-item>"
+  },
+  "Data: Statistic": {
+    "prefix": "nsta",
+    "body": [
+      "<n-statistic label=\"$1\">$2</n-statistic>",
+      "${3}"
+    ],
+    "description": "Naive UI <n-statistic>"
+  },
+  "Data: Table": {
+    "prefix": "nt",
+    "body": [
+      "<n-table :bordered=\"${1:false}\" :single-line=\"${2:false}\">",
+        "\t$3",
+      "</n-table>",
+      "$4"
+    ],
+    "description": "Naive UI <n-table>"
+  },
+  "Data: Thing": {
+    "prefix": "nth",
+    "body": [
+      "<n-thing>",
+        "\t<template #avatar>",
+          "\t\t${1}",
+        "\t</template>",
+        "\t<template #header>",
+          "\t\t${2}",
+        "\t</template>",
+        "\t<template #header-extra>",
+          "\t\t${3}",
+        "\t</template>",
+        "\t<template #description>",
+          "\t\t${4}",
+        "\t</template>",
+        "\t$5",
+        "\t<template #description>",
+          "\t\t${6}",
+        "\t</template>",
+      "</n-thing>",
+      "$7"
+    ],
+    "description": "Naive UI <n-thing>"
+  },
+  "Data: Time": {
+    "prefix": "ntim",
+    "body": [
+      "<n-time :time=\"$1\" :type=\"${2|date,datetime,relative|}\" />",
+      "$3"
+    ],
+    "description": "Naive UI <n-time>"
+  },
+  "Data: Timeline": {
+    "prefix": "ntl",
+    "body": [
+      "<n-timeline>",
+        "\t<n-timeline-item type=\"${1|info,success,warning,error|}\" title=\"$2\" content=\"$3\" time=\"$4\" />",
+      "</n-timeline>",
+      "$5"
+    ],
+    "description": "Naive UI <n-timeline>"
+  },
+  "Data: Timeline Item": {
+    "prefix": "ntli",
+    "body": [
+      "<n-timeline-item type=\"${1|info,success,warning,error|}\" title=\"$2\" content=\"$3\" time=\"$4\" />",
+      "$5"
+    ],
+    "description": "Naive UI <n-timeline-item>"
+  },
+  "Data: Tree": {
+    "prefix": "ntree",
+    "body": [
+      "<n-tree",
+        "\tblock-line",
+        "\t:data=\"${1:data}\"",
+        "\t:default-expanded-keys=\"${2:defaultExpandedKeys}\"",
+        "\tselectable",
+      "/>",
+      "$3"
+    ],
+    "description": "Naive UI <n-tree>"
+  },
+  "Navigation: Affix": {
+    "prefix": "naf",
+    "body": [
+      "<n-affix",
+        "\t:top=\"$1\"",
+        "\t:trigger-top=\"$2\"",
+        "\t:listen-to=\"() => $refs.${3}\"",
+      ">",
+        "\t$4",
+      "</n-affix>",
+      "$5"
+    ],
+    "description": "Naive UI <n-affix>"
+  },
+  "Navigation: Anchor": {
+    "prefix": "nan",
+    "body": [
+      "<n-anchor :show-rail=\"${1:showRail}\" :show-background=\"${2:showBackground}\">",
+        "\t<n-anchor-link title=\"$3\" href=\"$4\">",
+          "\t\t<n-anchor-link title=\"$5\" href=\"$6\" />",
+        "\t</n-anchor-link>",
+      "</n-anchor>",
+      "$7"
+    ],
+    "description": "Naive UI <n-anchor>"
+  },
+  "Navigation: Back Top": {
+    "prefix": "nbt",
+    "body": [
+      "<n-back-top :right=\"${1:40}\" :bottom=\"${2: 40}\" />",
+      "$3"
+    ],
+    "description": "Naive UI <n-back-top>"
+  },
+  "Navigation: Breadcrumb": {
+    "prefix": "nbr",
+    "body": [
+      "<n-breadcrumb>",
+        "\t<n-breadcrumb-item v-for=\"${1:item} in ${2:options}\" :key=\"$3\">${1:item}</n-breadcrumb-item>",
+      "</n-breadcrumb>",
+      "$4"
+    ],
+    "description": "Naive UI <n-breadcrumb>"
+  },
+  "Navigation: Menu": {
+    "prefix": "nm",
+    "body": [
+      "<n-menu",
+        "\t:options=\"${1:menuOptions}\"",
+        "\t:default-expanded-keys=\"${2:defaultExpandedKeys}\"",
+        "\t@update:expanded-keys=\"${3:handleUpdateExpandedKeys}\"",
+      "/>",
+      "$4"
+    ],
+    "description": "Naive UI <n-menu>"
+  },
+  "Navigation: Pagination": {
+    "prefix": "np",
+    "body": [
+      "<n-pagination",
+        "\t:item-count=\"${1:total}\"",
+        "\t:page-sizes=\"[10, 20, 50, 100]\"",
+        "\t@update:page=\"${2:handlePageChange}\"",
+        "\t@update:page-size=\"${3:handlePageSizeChange}\"",
+        "\tshowSizePicker />",
+      "$4"
+    ],
+    "description": "Naive UI <n-pagination>"
+  },
+  "Navigation: Steps": {
+    "prefix": "nst",
+    "body": [
+      "<n-steps :current=\"${1:current}\" :status=\"${2:currentStatus}\">",
+        "\t<n-step v-for=\"${3:step} in ${4:steps}\" :key=\"$5\" :title=\"${3:step}.title\" :description=\"${3:step}.desc\" />",
+      "</n-steps>",
+      "$6"
+    ],
+    "description": "Naive UI <n-steps>"
+  },
+  "Navigation: Tabs": {
+    "prefix": "ntabs",
+    "body": [
+      "<n-tabs v-model:value=\"${1:tabName}\" type=\"${2|line,bar,card|}\" size=\"${3|medium,small,large|}\">",
+        "\t<n-tab-pane name=\"$4\" tab=\"$5\">",
+          "\t\t$6",
+        "\t</n-tab-pane>",
+      "</n-tabs>",
+      "$7"
+    ],
+    "description": "Naive UI <n-tabs>"
+  },
+  "Navigation: Tab Pane": {
+    "prefix": "ntabp",
+    "body": [
+      "<n-tab-pane name=\"$1\" tab=\"$2\">",
+        "\t$3",
+      "</n-tab-pane>",
+      "$4"
+    ],
+    "description": "Naive UI <n-tab-pane>"
+  },
+  "Notice: Alert": {
+    "prefix": "nal",
+    "body": [
+      "<n-alert title=\"$1\" type=\"${2|default,info,success,warning,error|}\">",
+        "\t${3}",
+      "</n-alert>",
+      "$4"
+    ],
+    "description": "Naive UI <n-alert>"
+  },
+  "Notice: Badge": {
+    "prefix": "nba",
+    "body": [
+      "<n-badge :value=\"$1\" :max=\"${2:99}\" type=\"${3|default,info,success,warning,error|}\">",
+        "\t${4}",
+      "</n-badge>",
+      "$5"
+    ],
+    "description": "Naive UI <n-badge>"
+  },
+  "Notice: Drawer": {
+    "prefix": "ndr",
+    "body": [
+      "<n-drawer v-model:show=\"$1\" :width=\"$2\" :placement=\"${3|right,top,left,bottom|}\">",
+        "\t<n-drawer-content title=\"$4\">",
+          "\t\t$5",
+        "\t</n-drawer-content>",
+      "</n-drawer>",
+      "$6"
+    ],
+    "description": "Naive UI <n-drawer>"
+  },
+  "Notice: Modal": {
+    "prefix": "nmo",
+    "body": [
+      "<n-modal v-model:show=\"$1\"",
+        "\t$2",
+      "</n-modal>",
+      "$3"
+    ],
+    "description": "Naive UI <n-modal>"
+  },
+  "Notice: Popconfirm": {
+    "prefix": "npopc",
+    "body": [
+      "<n-popconfirm",
+        "\t@positive-click=\"${1:handlePositiveClick}\"",
+        "\t@negative-click=\"${2:handleNegativeClick\"",
+      ">",
+        "\t<template #trigger>",
+          "\t\t<n-button>$3</n-button>",
+        "\t</template>",
+        "\t$4",
+      "</n-popconfirm>",
+      "$5"
+    ],
+    "description": "Naive UI <n-popconfirm>"
+  },
+  "Notice: Popover": {
+    "prefix": "npopo",
+    "body": [
+      "<n-popover trigger=\"${1:hover}\">",
+        "\t<template #trigger>",
+          "\t\t<n-button>$2</n-button>",
+        "\t</template>",
+        "\t$3",
+      "</n-popover>",
+      "$4"
+    ],
+    "description": "Naive UI <n-popover>"
+  },
+  "Notice: Popselect": {
+    "prefix": "npops",
+    "body": [
+      "<n-popselect v-model:value=\"$1\" :options=\"${2:options}\">",
+        "\t$3",
+      "</n-popselect>",
+      "$4"
+    ],
+    "description": "Naive UI <n-popselect>"
+  },
+  "Notice: Progress": {
+    "prefix": "npro",
+    "body": [
+      "<n-progress type=\"${1|circle,line|\" status=\"${2|default,info,success,warning,error|}\" :percentage=\"${3:percentage}\" />",
+      "$4"
+    ],
+    "description": "Naive UI <n-progress>"
+  },
+  "Notice: Result": {
+    "prefix": "nres",
+    "body": [
+      "<n-result status=\"${1|info,success,error,warning,404,500,418|}\" title=\"$2\" description=\"$3\">",
+        "\t$4",
+      "</n-result>",
+      "$5"
+    ],
+    "description": "Naive UI <n-result>"
+  },
+  "Notice: Skeleton": {
+    "prefix": "nsk",
+    "body": [
+      "<n-skeleton text :repeat=\"$1\" width=\"$2\" height=\"$3\" />",
+      "$4"
+    ],
+    "description": "Naive UI <n-skeleton>"
+  },
+  "Notice: Spin": {
+    "prefix": "nsp",
+    "body": [
+      "<n-spin size=\"${1|medium,small,large|}\" />",
+      "$2"
+    ],
+    "description": "Naive UI <n-spin>"
+  },
+  "Notice: Tooltip": {
+    "prefix": "nto",
+    "body": [
+      "<n-tooltip trigger=\"${1|hover,click|}\">",
+        "\t<template #trigger>",
+          "\t\t<n-button>$2</n-button>",
+        "\t</template>",
+        "\t$3",
+      "</n-tooltip>",
+      "$4"
+    ],
+    "description": "Naive UI <n-tooltip>"
+  },
+  "Layout: Layout": {
+    "prefix": "nla",
+    "body": [
+      "<n-layout>",
+        "\t<n-layout-header>$1</n-layout-header>",
+        "\t<n-layout-content>$2</n-layout-content>",
+        "\t<n-layout-footer>$3</n-layout-footer>",
+      "</n-layout>",
+      "$4"
+    ],
+    "description": "Naive UI <n-layout>"
+  },
+  "Layout: Grid": {
+    "prefix": "ngr",
+    "body": [
+      "<n-grid :x-gap=\"${1:10}\" :y-gap=\"${2:5}\" :cols=\"${3:4}\">",
+        "\t<n-grid-item>",
+          "\t\t$4",
+        "\t</n-grid-item>",
+      "</n-grid>",
+      "$5"
+    ],
+    "description": "Naive UI <n-grid>"
+  },
+  "Layout: Grid Item": {
+    "prefix": "ngri",
+    "body": [
+      "<n-grid-item>",
+        "\t$1",
+      "</n-grid-item>",
+      "$2"
+    ],
+    "description": "Naive UI <n-grid-item>"
+  },
+  "Layout: Grid Space": {
+    "prefix": "ns",
+    "body": [
+      "<n-space>",
+        "\t$1",
+      "</n-space>",
+      "$2"
+    ],
+    "description": "Naive UI <n-space>"
+  },
+  "Provider: Loading Bar provider": {
+    "prefix": "nload",
+    "body": [
+      "<n-loading-bar-provider>",
+        "\t$1",
+      "</n-loading-bar-provider>",
+      "$2"
+    ],
+    "description": "Naive UI <n-loading-bar-provider>"
+  },
+  "Provider: Dialog provider": {
+    "prefix": "ndi",
+    "body": [
+      "<n-dialog-provider>",
+        "\t$1",
+      "</n-dialog-provider>",
+      "$2"
+    ],
+    "description": "Naive UI <n-dialog-provider>"
+  },
+  "Provider: Message provider": {
+    "prefix": "nmes",
+    "body": [
+      "<n-message-provider>",
+        "\t$1",
+      "</n-message-provider>",
+      "$2"
+    ],
+    "description": "Naive UI <n-message-provider>"
+  },
+  "Provider: Notification provider": {
+    "prefix": "nno",
+    "body": [
+      "<n-nofitication-provider>",
+        "\t$1",
+      "</n-nofitication-provider>",
+      "$2"
+    ],
+    "description": "Naive UI <n-nofitication-provider>"
+  },
+  "Provider: Config Provider": {
+    "prefix": "nco",
+    "body": [
+      "<n-config-provider :locale=\"zhCN\" :date-locale=\"dateZhCN\">",
+        "\t$1",
+      "</n-config-provider>",
+      "$2"
+    ],
+    "description": "Naive UI <n-config-provider>"
   }
 }

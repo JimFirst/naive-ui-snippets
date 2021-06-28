@@ -1,65 +1,36 @@
-# naive-ui-snippets README
+## This is Code Snippets of Naive UI for VS Code.
 
-This is the README for your extension "naive-ui-snippets". After writing up a brief description, we recommend including the following sections.
+### Install
 
-## Features
+#### Manual Install
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Go to the [git](https://github.com/JimFirst/naive-ui-snippets) and download the snippets folder, then copy the files in the folder to the path directly:
 
-For example if there is an image subfolder under your extension project workspace:
++ **Mac**: /Users/*< your-user-name >*/Library/Application Support/Code/User/snippets/
++ **Windows**: *< your-installed-driver >* :\Users\ *< your-user-name >* \AppData\Roaming\Code\User\snippets\
 
-\!\[feature X\]\(images/feature-x.png\)
+#### Through VS Code Extensions
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
++ From website: Go to Visual Studio Code [Marketplace](https://marketplace.visualstudio.com/vscode), and search 'Naive UI Snippets', then click the install button.
++ From VS Code: click extensions sidebar, and search 'Naive UI Snippets', then click the install button.
 
-## Requirements
+### Special Instruction
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+1. For the components like `n-table` which need children components to be its content, use `v-for` to loop to generate the children components.
 
-## Extension Settings
+### Snippets List
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+1. All the Naive UI tags below, ignore the closure and more detailed information. Such as `elr` to `<n-radio>`, actually that represents `<n-radio v-model="${1}" label="${2}">$3</n-radio>`
+2. The sinppets' order follows the order of the components of Guide on Naive UI official website basically. <!--Supply extra General and Options parts.-->
+3. Totally 108 snippets. Will add more if necessary.
+4. **Only work in .vue file for now.**
 
-For example:
+#### Basic Part
 
-This extension contributes the following settings:
+|No.|Trigger&nbsp;Key|Naive Tag|
+|:------:|:--------------:|:--------|
+|1. | `nrow` | `<n-row>` |
+|2. | `ncol` | `<n-col>` |
+|3. | `nhc` | `hidden-xs-only,hidden-sm-only,etc` |
+|4. | `ncon` | `<n-container>` |
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**

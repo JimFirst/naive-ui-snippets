@@ -3,6 +3,7 @@
 	"displayName": "Naive Ui Snippets",
 	"description": "Code snippets for Naive-UI which is a Vue.js 3.0 UI Toolkit for Web",
 	"version": "0.0.1",
+	"publisher": "JimDong",
 	"author": {
 		"name": "JimDomg"
 	},
@@ -48,5 +49,14 @@
 		"mocha": "^8.4.0",
 		"typescript": "^4.3.2",
 		"vscode-test": "^1.5.2"
-	}
+	},
+	"bugs": {
+		"url": "https://github.com/JimFirst/naive-ui-snippets/issues",
+		"email": "154211320@qq.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JimFirst/naive-ui-snippets.git"
+	},
+	"homepage": "https://github.com/JimFirst/naive-ui-snippets/blob/master/README.md"
 }
