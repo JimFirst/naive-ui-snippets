@@ -32,5 +32,6 @@ Go to the [git](https://github.com/JimFirst/naive-ui-snippets) and download the 
 |1. | `nrow` | `<n-row>` |
 |2. | `ncol` | `<n-col>` |
 |3. | `nhc` | `hidden-xs-only,hidden-sm-only,etc` |
-|4. | `ncon` | `<n-container>` |
+|4. | `ncon` | `<n-container>` |  
+待续
 

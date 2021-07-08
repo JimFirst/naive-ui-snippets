@@ -323,7 +323,12 @@
   "Data: Data Table": {
     "prefix": "ndt",
     "body": [
-      "<n-data-table :columns=\"${1:columns}\" :data=\"${2:data}\" :pagination=\"${3:pagination}\" />",
+      "<n-data-table",
+        "\tremote",
+        "\t:columns=\"${1:columns}\"", 
+        "\t:data=\"${2:data}\"",
+        "\t:paging=\"false\"",
+        "\t:pagination=\"${3:pagination}\" />",
       "${4}"
     ],
     "description": "Naive UI <n-data-table>"
@@ -608,7 +613,11 @@
   "Notice: Modal": {
     "prefix": "nmo",
     "body": [
-      "<n-modal v-model:show=\"$1\"",
+      "<n-modal",
+        "v-model:show=\"$1\"",
+        "preset=\"card\"",
+        "title=\"$2\"",
+      ">",
         "\t$2",
       "</n-modal>",
       "$3"

@@ -13,9 +13,6 @@
 	"categories": [
 		"Snippets"
 	],
-	"activationEvents": [
-		"onCommand:naive-ui-snippets.helloWorld"
-	],
 	"main": "./extension.js",
 	"contributes": {
 		"snippets": [
