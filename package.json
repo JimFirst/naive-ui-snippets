@@ -2,7 +2,7 @@
 	"name": "naive-ui-snippets",
 	"displayName": "Naive Ui Snippets",
 	"description": "Code snippets for Naive-UI which is a Vue.js 3.0 UI Toolkit for Web",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "JimDong",
 	"author": {
 		"name": "JimDomg"

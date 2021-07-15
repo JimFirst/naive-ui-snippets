@@ -12,7 +12,7 @@ Go to the [git](https://github.com/JimFirst/naive-ui-snippets) and download the 
 #### Through VS Code Extensions
 
 + From website: Go to Visual Studio Code [Marketplace](https://marketplace.visualstudio.com/vscode), and search 'Naive UI Snippets', then click the install button.
-+ From VS Code: click extensions sidebar, and search 'Naive UI Snippets', then click the install button.
++ From VS Code: click extensions sidebar, and search 'NaiveUISnippets', then click the install button.
 
 ### Special Instruction
 
