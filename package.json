@@ -13,7 +13,6 @@
 	"categories": [
 		"Snippets"
 	],
-	"main": "./extension.js",
 	"contributes": {
 		"snippets": [
 			{
