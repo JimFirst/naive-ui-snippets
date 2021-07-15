@@ -261,7 +261,7 @@
   "Form: Select": {
     "prefix": "nsel",
     "body": [
-      "<n-select v-model:value=\"$1\" size=\"${2|medium,small,large|}\" :options=\"${3:options}\" clearable filter />",
+      "<n-select v-model:value=\"$1\" size=\"${2|medium,small,large|}\" :options=\"${3:options}\" clearable />",
       "${4}"
     ],
     "description": "Naive UI <n-select>"
@@ -328,8 +328,10 @@
         "\t:columns=\"${1:columns}\"", 
         "\t:data=\"${2:data}\"",
         "\t:paging=\"false\"",
-        "\t:pagination=\"${3:pagination}\" />",
-      "${4}"
+        "\t:pagination=\"${3:pagination}\"",
+        "\t:loading=\"${4:loading}\"",
+        "\t@update:page=\"pageChange\" />",
+      "${5}"
     ],
     "description": "Naive UI <n-data-table>"
   },

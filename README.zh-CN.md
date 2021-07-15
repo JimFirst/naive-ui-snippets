@@ -1,13 +1,10 @@
 ## This is Code Snippets of Naive UI for VS Code.
-English | [中文](README.zh-CN.md)
-### Install
+[English](README.md) | 中文
+### 安装
 
-#### Manual Install
+#### 手动安装
 
-Go to the [git](https://github.com/JimFirst/naive-ui-snippets) and download the snippets folder, then copy the files in the folder to the path directly:
-
-+ **Mac**: /Users/*< your-user-name >*/Library/Application Support/Code/User/snippets/
-+ **Windows**: *< your-installed-driver >* :\Users\ *< your-user-name >* \AppData\Roaming\Code\User\snippets\
+跳转到[git](https://github.com/JimFirst/naive-ui-snippets)，下载文件夹，然后直接安装naive-ui-snippets-0.0.1.vsix文件  
 
 #### Through VS Code Extensions
 
